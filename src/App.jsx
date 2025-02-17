@@ -1,18 +1,21 @@
-import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
+import Home from "./components/Home"
+import AllArticles from "./components/AllArticles";
+import Article from "./components/Article";
 
 function App() {
   return (
     <>
-      
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/articles" element={<AllArticles />} />
+      <Route path="/articles/:article_id" element={<Article />} />
+    </Routes>
     </>
   );
 }
 
 export default App;
 
-// const [count, setCount] = useState(0)
 
-//  <button onClick={() => setCount((count) => count + 1)}>
-// count is {count}
-// </button>
