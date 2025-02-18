@@ -4,6 +4,22 @@
   padding: 2rem;
   text-align: center;
 }
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #f8f8f8;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 /* 
 .logo {
   height: 6em;
@@ -18,9 +34,58 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 } */
 
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+/* Standard Links */
+
+a {
+  font-weight: 500;
+  color: #0F110C;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #C1BFB5;
+}
+
 .card {
   padding: 2em;
 }
+
+/* Red Button */
+
+.red-button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #9B1D20;
+  color: #FEFDFF;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+.red-button:hover {
+  border-color: #6e1314;
+  color: #0F110C;
+}
+.red-button:focus,
+.red-button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Article Card for AllArticles */
 
 .articeCardContainer {
   margin: 0px;
@@ -47,3 +112,44 @@
   color: #fefdff;
   text-decoration: underline;
 }
+
+/* Individual Article Page */
+
+.articeContainer {
+  margin: 0px;
+  padding: 0px;
+}
+
+.article {
+  border-radius: 8px;
+  list-style: none;
+  margin: 10px;
+  /* padding: 20px; */
+}
+
+.img-box {
+  background-color: #9b1d20;
+  color: #FEFDFF;
+  margin: 0px;
+  padding-bottom: 10px;
+  height: 360px;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.articleImg {
+  margin: 0px;
+  height: 310px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0px;
+  text-align: center;
+}
+
+.art-body {
+  color: #0F110C;
+  padding: 15px 0px;
+
+}
+
+/*  */
