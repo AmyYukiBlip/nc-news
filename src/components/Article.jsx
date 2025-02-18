@@ -1,65 +1,50 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { ncNewsApi } from "../api";
-import NavBar from "./NavBar";
+import CommentCard from "./CommentCard";
+import FormatDate from "./FormatDate";
 
 export default function Article() {
   const { article_id } = useParams();
-  const [img, setImg] = useState(null);
-  const [title, seTitle] = useState("");
-  const [body, setBody] = useState("");
-  const [topic, setTopic] = useState("");
-  const [author, setAuthor] = useState("");
-  const [date, setDate] = useState(null);
-  const [voteCount, setVoteCount] = useState(0);
-  const [commentCount, setCommentCount] = useState(0);
+  const [article, setArticle] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    if (article_id) {
-      ncNewsApi.get(`/articles/${article_id}`).then((res) => {
-        console.log(res.data.articles, "<< Article Res");
-        setImg(res.data.articles.article_img_url);
-        seTitle(res.data.articles.title);
-        setBody(res.data.articles.body);
-        setTopic(res.data.articles.topic);
-        setAuthor(res.data.articles.author);
-        setDate(res.data.articles.created_at);
-        setVoteCount(res.data.articles.votes);
-        setCommentCount(res.data.articles.comment_count);
-        setIsLoading(false)
-      });
-    }
+    ncNewsApi.get(`/articles/${article_id}`).then((res) => {
+      setArticle(res.data.articles);
+      setIsLoading(false);
+    });
   }, [article_id]);
 
-  if (isLoading) return <p>Loading...</p>
-  
+  if (isLoading) return <p>Loading...</p>;
+
   return (
     <>
-      <NavBar />
-      <ul className="articeContainer">
-        <li className="article">
+      <section className="articeContainer">
+        <article className="article">
+
           <div className="img-box">
-            <img className="articleImg" src={img} />
+            <img className="articleImg" src={article.article_img_url} />
             <p>
-              {voteCount} 👏🏼  |  {commentCount} 🗩
+              {article.votes } 👏🏼 | {article.comment_count} 🗩
             </p>
           </div>
 
           <div className="art-body">
-            <h2>{title}</h2>
+            <h2>{article.title}</h2>
             <p>
-              <strong>{date}</strong>
+              {FormatDate(article.created_at)}
             </p>
-            <p>{body}</p>
-            <p>
-              <strong>
-                Written by {author} for {topic}
-              </strong>
+            <p>{article.body}</p>
+            <p className="author">
+                Written by {article.author} for {article.topic}
             </p>
           </div>
-        </li>
-      </ul>
+
+        </article>
+        <CommentCard />
+      </section>
+      
       <Link className="red-button" to={`/articles/`}>
         Back to All
       </Link>
