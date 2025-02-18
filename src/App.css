@@ -51,15 +51,19 @@ h1 {
 
 a {
   font-weight: 500;
-  color: #0F110C;
+  color: #0f110c;
   text-decoration: inherit;
 }
 a:hover {
-  color: #C1BFB5;
+  color: #c1bfb5;
 }
 
 .card {
   padding: 2em;
+}
+
+.loading {
+  padding: 25px 0px;
 }
 
 /* Red Button */
@@ -71,14 +75,14 @@ a:hover {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #9B1D20;
-  color: #FEFDFF;
+  background-color: #9b1d20;
+  color: #fefdff;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 .red-button:hover {
   border-color: #6e1314;
-  color: #0F110C;
+  color: #0f110c;
 }
 .red-button:focus,
 .red-button:focus-visible {
@@ -129,7 +133,7 @@ a:hover {
 
 .img-box {
   background-color: #9b1d20;
-  color: #FEFDFF;
+  color: #fefdff;
   margin: 0px;
   padding-bottom: 10px;
   height: 360px;
@@ -147,9 +151,37 @@ a:hover {
 }
 
 .art-body {
-  color: #0F110C;
-  padding: 15px 0px;
-
+  color: #0f110c;
+  padding: 30px 0px;
 }
 
-/*  */
+.author {
+  margin: 10px 0px;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Comment Card Component */
+
+.comment-container {
+  background-color: #C1BFB5;
+  color: #0F110C;
+  padding: 15px 0px;
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 50px;
+}
+
+.comment-list {
+  width: 80%;
+  margin: auto;
+  padding: 0px;
+  text-align: center;
+  list-style: none;
+}
+
+.comment-author {
+  margin: 10px 0px;
+  padding-bottom: 10px;
+  font-weight: bold;
+}

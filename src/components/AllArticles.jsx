@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { ncNewsApi } from "../api";
 import ArticleCard from "./ArticleCard";
-import NavBar from "./NavBar";
 
 export default function AllArticles() {
   const [articles, setArticles] = useState([]);
@@ -12,12 +11,10 @@ export default function AllArticles() {
       .get("/articles")
       .then((res) => {
         setArticles(res.data.articles);
-        console.log(res.data.articles, "< res");
         setIsLoading(false);
       })
       .catch((err) => {
-        console.log(err, "<< err");
-        setIsLoading(fasle);
+        setIsLoading(false);
       });
   }, []);
 
@@ -25,12 +22,11 @@ export default function AllArticles() {
 
   return (
     <>
-      <NavBar />
       <h2>Grab a cuppa, and read more news below...</h2>
       {articles.map((article) => {
         return <ArticleCard key={article.article_id} article={article} />;
       })}
-      {/* mapped {article} object is being passed to ArticleCard */}
+      {/* ^^ mapped {article} object is being passed to ArticleCard */}
     </>
   );
 }
