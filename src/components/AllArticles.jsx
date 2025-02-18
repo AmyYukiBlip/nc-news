@@ -5,6 +5,7 @@ import NavBar from "./NavBar";
 
 export default function AllArticles() {
   const [articles, setArticles] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     ncNewsApi
@@ -12,11 +13,15 @@ export default function AllArticles() {
       .then((res) => {
         setArticles(res.data.articles);
         console.log(res.data.articles, "< res");
+        setIsLoading(false);
       })
       .catch((err) => {
         console.log(err, "<< err");
+        setIsLoading(fasle);
       });
   }, []);
+
+  if (isLoading) return <p>Loading...</p>;
 
   return (
     <>

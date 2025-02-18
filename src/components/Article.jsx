@@ -13,6 +13,7 @@ export default function Article() {
   const [date, setDate] = useState(null);
   const [voteCount, setVoteCount] = useState(0);
   const [commentCount, setCommentCount] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     if (article_id) {
@@ -26,10 +27,13 @@ export default function Article() {
         setDate(res.data.articles.created_at);
         setVoteCount(res.data.articles.votes);
         setCommentCount(res.data.articles.comment_count);
+        setIsLoading(false)
       });
     }
   }, [article_id]);
 
+  if (isLoading) return <p>Loading...</p>
+  
   return (
     <>
       <NavBar />
@@ -38,7 +42,7 @@ export default function Article() {
           <div className="img-box">
             <img className="articleImg" src={img} />
             <p>
-              {voteCount} 👏🏼  |  {commentCount} 🗩{" "}
+              {voteCount} 👏🏼  |  {commentCount} 🗩
             </p>
           </div>
 
