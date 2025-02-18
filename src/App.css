@@ -1,8 +1,10 @@
 #root {
-  max-width: 1280px;
+  max-width: 1080px;
   margin: 0 auto;
-  padding: 2rem;
+  /* padding: 2rem; */
   text-align: center;
+  min-width: 440px;
+  /* min-height: 100vh; */
 }
 
 :root {
@@ -20,6 +22,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  margin: 0px 0px 100px 0px;
+  /* display: flex; */
+  place-items: center;
+}
+
 /* 
 .logo {
   height: 6em;
@@ -34,17 +42,55 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 } */
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+.nav-container {
+  list-style-type: none;
+  background-color: #0f110c;
+  margin: 0px 0px 50px 0px;
+  padding: 0;
+  overflow: hidden;
 }
+
+.nav-item-left {
+  float: left;
+  display: block;
+  color: #fefdff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.nav-link-left {
+  display: block;
+  color: #fefdff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.nav-item-right {
+  display: block;
+  float: right;
+  color: #fefdff;
+  text-align: center;
+  text-decoration: none;
+}
+
+.nav-link-right {
+  background-color: #9b1d20;
+  border-radius: 24px;
+  margin: 16px 20px;
+  padding: 10px 24px;
+}
+
+/* standard elements */
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+.card {
+  padding: 2em;
 }
 
 /* Standard Links */
@@ -58,9 +104,7 @@ a:hover {
   color: #c1bfb5;
 }
 
-.card {
-  padding: 2em;
-}
+/* errors, loading etc */
 
 .loading {
   padding: 25px 0px;
@@ -79,17 +123,20 @@ a:hover {
   color: #fefdff;
   cursor: pointer;
   transition: border-color 0.25s;
+  margin-top: 20px;
+  display: inline-block;
 }
 .red-button:hover {
   border-color: #6e1314;
   color: #0f110c;
 }
-.red-button:focus,
+
+/* .red-button:focus,
 .red-button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
+} */
 
-/* Article Card for AllArticles */
+/* Article Card for rendering AllArticles */
 
 .articeCardContainer {
   margin: 0px;
@@ -164,12 +211,11 @@ a:hover {
 /* Comment Card Component */
 
 .comment-container {
-  background-color: #C1BFB5;
-  color: #0F110C;
+  background-color: #c1bfb5;
+  color: #0f110c;
   padding: 15px 0px;
   text-align: center;
-  margin-top: 25px;
-  margin-bottom: 50px;
+  margin: 25px 10px 50px;
 }
 
 .comment-list {
