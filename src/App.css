@@ -92,7 +92,7 @@ h1 {
 }
 
 .h2-page-titles {
-margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 .card {
@@ -216,6 +216,16 @@ a:hover {
   font-weight: bold;
 }
 
+/* Forms */
+
+input {
+  border-radius: 4px;
+  background-color: #fefdff;
+  color: #0f110c;
+  padding: 10px 20px;
+  margin: 10px;
+}
+
 /* Comment Card Component */
 
 .comment-container {
@@ -236,6 +246,30 @@ a:hover {
 
 .comment-author {
   margin: 10px 0px;
-  padding-bottom: 10px;
   font-weight: bold;
+}
+
+/* Thumbs up / down Button */
+
+/* .thumb-container {
+ 
+} */
+
+.thumb-button {
+  border-radius: 24px;
+  border: 1px solid transparent;
+  padding: 0.5em;
+  font-size: 1em;
+  font-family: inherit;
+  background-color: #9b1d20;
+  color: #fefdff;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  margin: 5px;
+  margin-bottom: 15px;;
+  display: inline-block;
+}
+.thumb-button:hover {
+  border-color: #6e1314;
+  color: #0f110c;
 }
