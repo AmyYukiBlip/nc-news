@@ -22,7 +22,7 @@ export default function AllArticles() {
 
   return (
     <>
-      <h2>Grab a cuppa, and read more news below...</h2>
+      <h2 className="h2-page-titles">Grab a cuppa, and read more news below...</h2>
       {articles.map((article) => {
         return <ArticleCard key={article.article_id} article={article} />;
       })}
