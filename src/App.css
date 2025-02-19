@@ -42,6 +42,8 @@ body {
   filter: drop-shadow(0 0 2em #61dafbaa);
 } */
 
+/* Nav banner */
+
 .nav-container {
   list-style-type: none;
   background-color: #0f110c;
@@ -89,6 +91,10 @@ h1 {
   line-height: 1.1;
 }
 
+.h2-page-titles {
+margin-bottom: 50px;
+}
+
 .card {
   padding: 2em;
 }
@@ -113,17 +119,17 @@ a:hover {
 /* Red Button */
 
 .red-button {
-  border-radius: 8px;
+  border-radius: 24px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
+  font-size: 1.1em;
+  font-weight: 600;
   font-family: inherit;
   background-color: #9b1d20;
   color: #fefdff;
   cursor: pointer;
   transition: border-color 0.25s;
-  margin-top: 20px;
+  margin: 20px 15px;
   display: inline-block;
 }
 .red-button:hover {
@@ -136,7 +142,7 @@ a:hover {
   outline: 4px auto -webkit-focus-ring-color;
 } */
 
-/* Article Card for rendering AllArticles */
+/* Article CARD for rendering AllArticles */
 
 .articeCardContainer {
   margin: 0px;
@@ -168,7 +174,7 @@ a:hover {
 
 .articeContainer {
   margin: 0px;
-  padding: 0px;
+  padding: 0px 15px;
 }
 
 .article {
@@ -182,10 +188,12 @@ a:hover {
   background-color: #9b1d20;
   color: #fefdff;
   margin: 0px;
-  padding-bottom: 10px;
+  padding-bottom: 30px;
   height: 360px;
   width: 100%;
   border-radius: 8px;
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
 .articleImg {
@@ -199,7 +207,7 @@ a:hover {
 
 .art-body {
   color: #0f110c;
-  padding: 30px 0px;
+  padding: 30px 30px;
 }
 
 .author {

@@ -6,7 +6,7 @@ export default function Home(){
         <div >
             <h1>Northcoders News</h1>
             <h2>Spilling all the tea ☕</h2>
-            <p>coming soon... Latest article</p>
+            <p>coming soon... Latest</p>
             <p>Coming soon... Categories</p>
             <Link className="red-button" to="/articles">All Articles</Link>
         </div>
