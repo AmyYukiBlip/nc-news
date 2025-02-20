@@ -15,7 +15,7 @@ export default function Article() {
   const [postMsg, setPostMsg] = useState(false);
   
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState(false);
 
   //  ** Getting article info by ID **
   useEffect(() => {
@@ -32,10 +32,9 @@ export default function Article() {
       .patch(`/articles/${article_id}`, { inc_votes: increment })
       .then((res) => {
         setVote(res.data.articles[0].votes);
-        setError(null);
       })
       .catch((err) => {
-        setError(err);
+        setError(true);
       });
   }
 
@@ -49,11 +48,11 @@ export default function Article() {
     ncNewsApi
       .post(`/articles/${article_id}/comments`, post)
       .then((res) => {
-        setError(null);
         setPostMsg(true);
+        alert("Comment succesfully posted!")
       })
       .catch((err) => {
-        setError(err);
+        setError(true);
       });
   }
 
@@ -62,10 +61,7 @@ export default function Article() {
   if (error) return <p>Oops, we have an error, please try again!</p>;
   if (postMsg)
     return (
-      <>
-        <p>Comment succesfully posted!</p>
         <Article />
-      </>
     );
 
 
@@ -96,7 +92,10 @@ export default function Article() {
             </button>
           </div>
         </article>
-        <section>
+
+        <section className="comment-section">
+          <h2>Join the convo!</h2>
+          <p>Post your comment below...</p>
           <form onSubmit={handleSubmit}>
             <input
               type="text"

@@ -228,6 +228,14 @@ input {
 
 /* Comment Card Component */
 
+.comment-section{
+background-color: #0F110C;
+color: #fefdff;
+border-radius: 6px;
+padding-top: 20px;
+padding-bottom: 10px;;
+}
+
 .comment-container {
   background-color: #c1bfb5;
   color: #0f110c;
@@ -249,7 +257,7 @@ input {
   font-weight: bold;
 }
 
-/* Thumbs up / down Button */
+/* Icon buttons */
 
 /* .thumb-container {
  
@@ -258,7 +266,26 @@ input {
 .thumb-button {
   border-radius: 24px;
   border: 1px solid transparent;
-  padding: 0.5em;
+  padding: 0.4em 0.8em;
+  font-size: 1em;
+  font-family: inherit;
+  background-color: #fefdff;
+  color: #0f110c;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  margin: 5px;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+.thumb-button:hover {
+  border-color: #9b1d20;
+  color: #9b1d20;
+}
+
+.delete-button {
+  border-radius: 24px;
+  border: 1px solid transparent;
+  padding: 0.4em 0.8em;
   font-size: 1em;
   font-family: inherit;
   background-color: #9b1d20;
@@ -266,10 +293,10 @@ input {
   cursor: pointer;
   transition: border-color 0.25s;
   margin: 5px;
-  margin-bottom: 15px;;
+  margin-bottom: 15px;
   display: inline-block;
 }
-.thumb-button:hover {
+.delete-button:hover {
   border-color: #6e1314;
   color: #0f110c;
 }
