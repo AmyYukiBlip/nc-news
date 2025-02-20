@@ -13,7 +13,7 @@ export default function Article() {
     body: "",
   });
   const [postMsg, setPostMsg] = useState(false);
-  
+
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
 
@@ -49,7 +49,7 @@ export default function Article() {
       .post(`/articles/${article_id}/comments`, post)
       .then((res) => {
         setPostMsg(true);
-        alert("Comment succesfully posted!")
+        alert("Comment succesfully posted!");
       })
       .catch((err) => {
         setError(true);
@@ -59,11 +59,7 @@ export default function Article() {
   // ** Errors & Messages **
   if (isLoading) return <p>Loading...</p>;
   if (error) return <p>Oops, we have an error, please try again!</p>;
-  if (postMsg)
-    return (
-        <Article />
-    );
-
+  if (postMsg) return <Article />;
 
   return (
     <>
@@ -73,7 +69,7 @@ export default function Article() {
             <img className="articleImg" src={article.article_img_url} />
             <p>
               {error ? <p>{error}</p> : null}
-              {currVote} 👏🏼 | {article.comment_count} 🗩
+              {article.comment_count} 🗩
             </p>
           </div>
 
@@ -84,12 +80,15 @@ export default function Article() {
             <p className="author">
               Written by {article.author} for {article.topic}
             </p>
-            <button className="red-button" onClick={() => incrementCount(1)}>
-              + 👏🏼
-            </button>
-            <button className="red-button" onClick={() => incrementCount(-1)}>
-              - 👏🏼
-            </button>
+            <div className="vote-container">
+              <button className="red-button" onClick={() => incrementCount(1)}>
+                👍🏼
+              </button>
+              {currVote}
+              <button className="red-button" onClick={() => incrementCount(-1)}>
+                👎🏼
+              </button>
+            </div>
           </div>
         </article>
 

@@ -12,7 +12,7 @@ export default function ArticleCard({ article }) {
           <h2>{article.title}</h2>
           <p className="author">Written by {article.author}</p>
           <p>
-            {article.votes} 👏🏼 | {article.comment_count} 🗩
+            {article.votes} 👍🏼 | {article.comment_count} 🗩
           </p>
           <Link
             className="articleCardLink"
