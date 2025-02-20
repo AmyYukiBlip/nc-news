@@ -1,9 +1,12 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ncNewsApi } from "../api";
 import FormatDate from "../utils/FormatDate";
+// import { UserAccount } from "../context/UserAccount";
 
 export default function CommentCard() {
+  // const loggedInUser = useContext(UserAccount);
+  // const [loggedInUser, setLoggedInUser] = useState("");
   const { article_id } = useParams();
   const [comments, setComments] = useState([]);
   const [currLikes, setLikes] = useState(0);
@@ -26,16 +29,18 @@ export default function CommentCard() {
   }, [article_id]);
 
   //  ** Delete a comment from an article **
-  function deleteComment(comment_id) {
-    ncNewsApi
-      .delete(`/comments/${comment_id}`)
-      .then((res) => {
-        alert("Comment has been deleted");
-        setDeleteMsg(true);
-      })
-      .catch((err) => {
-        setError(true);
-      });
+  function deleteComment(comment_id, loggedInUser) {
+    // if (loggedInUser === comments.author) {
+      ncNewsApi
+        .delete(`/comments/${comment_id}`)
+        .then((res) => {
+          alert("Comment has been deleted");
+          setDeleteMsg(true);
+        })
+        .catch((err) => {
+          setError(true);
+        });
+    // }
   }
 
   //  ** Voting on comment **
@@ -47,7 +52,7 @@ export default function CommentCard() {
   }
 
   if (isLoading) return <p className="loading">Waiting for comments...</p>;
- 
+
   if (comments.length === 0) {
     return (
       <p>Oh dear, this article has no comments yet! Add yours above 😎 </p>

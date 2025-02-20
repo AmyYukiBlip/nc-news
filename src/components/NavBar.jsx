@@ -1,10 +1,9 @@
 import { useContext, React } from "react";
 import { Link } from "react-router-dom";
-import { UserAccount } from "./UserAccount";
+// import { UserAccount } from "../context/UserAccount";
 
 export default function NavBar() {
-  const loggedInUser = useContext(UserAccount);
-  console.log("User logged in is:", loggedInUser);
+  // const loggedInUser = useContext(UserAccount);
 
   return (
     <ul className="nav-container">

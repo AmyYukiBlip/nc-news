@@ -1,6 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { useState } from "react";
-import { UserAccount } from "./components/UserAccount";
+// import { UserAccount } from "./context/UserAccount";
 import Home from "./components/Home";
 import AllArticles from "./components/AllArticles";
 import Article from "./components/Article";
@@ -10,11 +9,9 @@ import LoginForm from "./components/LoginForm";
 
 
 function App() {
-  const [loggedInUser, setLoggedInUser] = useState("");
 
   return (
     <>
-      <UserAccount.Provider value={{loggedInUser, setLoggedInUser}}>
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -26,7 +23,7 @@ function App() {
           />
           <Route path="/login" element={<LoginForm />} />
         </Routes>
-      </UserAccount.Provider>
+        
     </>
   );
 }
