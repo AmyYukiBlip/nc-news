@@ -3,7 +3,7 @@
   margin: 0 auto;
   /* padding: 2rem; */
   text-align: center;
-  min-width: 390px;
+  min-width: 445px;
   /* min-height: 100vh; */
 }
 
@@ -89,7 +89,7 @@ body {
   margin: 0px 25px;
   border-radius: 6px;
   padding-top: 20px;
-  padding-bottom: 10px;;
+  padding-bottom: 10px;
 }
 
 /* standard elements */
@@ -100,7 +100,7 @@ h1 {
 }
 
 .h2-page-titles {
-  margin-bottom: 50px;
+  padding: 10px;
 }
 
 .card {
@@ -129,7 +129,7 @@ a:hover {
 .red-button {
   border-radius: 24px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  padding: 0.5em 1.2em;
   font-size: 1.1em;
   font-weight: 600;
   font-family: inherit;
@@ -137,7 +137,7 @@ a:hover {
   color: #fefdff;
   cursor: pointer;
   transition: border-color 0.25s;
-  margin: 20px 15px;
+  margin: 10px;
   display: inline-block;
 }
 .red-button:hover {
@@ -150,14 +150,14 @@ a:hover {
   outline: 4px auto -webkit-focus-ring-color;
 } */
 
-/* Article CARD for rendering AllArticles */
+/* Topic CARD for rendering AllTopics */
 
-.articeCardContainer {
+.topicCardContainer {
   margin: 0px;
   padding: 0px;
 }
 
-.articleCard {
+.topicCard {
   background-color: #9b1d20;
   color: #fefdff;
   border-radius: 8px;
@@ -167,14 +167,55 @@ a:hover {
   align-items: center;
 }
 
-.articleCardImg {
+.topicCardImg {
   margin: 10px;
   width: 90%;
   border-radius: 8px;
 }
 
-.articleCardLink {
+.topicCardLink {
   color: #fefdff;
+  text-decoration: underline;
+}
+
+/* All Articles */
+
+.article-card-column {
+  margin-top: 50px;
+  columns: 2 auto;
+}
+
+/* Article CARD for rendering AllArticles */
+
+.articeCardContainer {
+  margin: 0px;
+  padding: 0px;
+}
+
+.articleCard {
+  background-color: #dad8d1;
+  color: 0F110C;
+  border-radius: 8px;
+  list-style: none;
+  margin: 0px 15px 70px 15px;
+  padding: 20px;
+  align-items: center;
+  break-inside: avoid;
+
+}
+
+.articleCardImg {
+  width: 98%;
+  border-radius: 8px;
+}
+
+.articleCardLink {
+  color: #9b1d20;
+  text-decoration: underline;
+}
+
+.articleCardLink:hover {
+  color: #0f110c;
   text-decoration: underline;
 }
 
@@ -236,20 +277,22 @@ input {
 
 /* Comment Card Component */
 
-.comment-section{
-background-color: #0F110C;
-color: #fefdff;
-border-radius: 6px;
-padding-top: 20px;
-padding-bottom: 10px;;
+.comment-section {
+  background-color: #0f110c;
+  color: #fefdff;
+  border-radius: 8px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  margin-bottom: 50px;
 }
 
 .comment-container {
   background-color: #c1bfb5;
+  border-radius: 8px;
   color: #0f110c;
   padding: 15px 0px;
   text-align: center;
-  margin: 25px 10px 50px;
+  margin: 25px 15px 10px;
 }
 
 .comment-list {
@@ -268,11 +311,11 @@ padding-bottom: 10px;;
 /* Article Vote Section */
 
 .vote-container {
- background-color: #e6e5e2;
- font-weight: 800;
- border-radius: 8px;
- margin: 0 auto; 
- width: 100%;
+  background-color: #e6e5e2;
+  font-weight: 800;
+  border-radius: 8px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 /* Icon buttons */
