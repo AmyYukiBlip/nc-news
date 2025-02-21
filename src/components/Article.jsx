@@ -69,7 +69,7 @@ export default function Article() {
             <img className="articleImg" src={article.article_img_url} />
             <p>
               {error ? <p>{error}</p> : null}
-              {article.comment_count} 🗩
+              {article.comment_count} 💬
             </p>
           </div>
 

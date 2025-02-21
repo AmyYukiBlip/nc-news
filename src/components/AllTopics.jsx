@@ -14,12 +14,10 @@ export default function AllTopics() {
       .get("/topics")
       .then((res) => {
         setTopics(res.data.topics);
-        // ^^ an array of topic objects
         setIsLoading(false);
       })
       .catch((err) => {
         setIsLoading(false);
-        console.log("error: ", err);
       });
   }, []);
  

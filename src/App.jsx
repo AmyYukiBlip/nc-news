@@ -20,9 +20,7 @@ function App() {
           element={<CommentCard />}
         />
         <Route path="/login" element={<LoginForm />} />
-        <Route path="/articles?topic=coding" element={<AllArticles />} />
-        <Route path="/articles?topic=football" element={<AllArticles />} />
-        <Route path="/articles?topic=cooking" element={<AllArticles />} />
+        {/* <Route path="/articles?topic=:topic" element={<AllArticles />} /> */}
       </Routes>
     </>
   );
