@@ -19,27 +19,27 @@ export default function CommentCard() {
     ncNewsApi
       .get(`/articles/${article_id}/comments`)
       .then((res) => {
-        setComments(res.data.comments);
         setIsLoading(false);
+        setComments(res.data.comments);
       })
       .catch((err) => {
-        setError(true);
         setIsLoading(false);
+        setError(true);
       });
   }, [article_id]);
 
   //  ** Delete a comment from an article **
   function deleteComment(comment_id, loggedInUser) {
     // if (loggedInUser === comments.author) {
-      ncNewsApi
-        .delete(`/comments/${comment_id}`)
-        .then((res) => {
-          alert("Comment has been deleted");
-          setDeleteMsg(true);
-        })
-        .catch((err) => {
-          setError(true);
-        });
+    ncNewsApi
+      .delete(`/comments/${comment_id}`)
+      .then((res) => {
+        alert("Comment has been deleted");
+        setDeleteMsg(true);
+      })
+      .catch((err) => {
+        setError(true);
+      });
     // }
   }
 

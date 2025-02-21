@@ -8,22 +8,26 @@ import TopicCard from "./TopicCard";
 export default function AllTopics() {
   const [topics, setTopics] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     ncNewsApi
       .get("/topics")
       .then((res) => {
-        setTopics(res.data.topics);
         setIsLoading(false);
+        setTopics(res.data.topics);
       })
       .catch((err) => {
         setIsLoading(false);
+        setError(error)
       });
   }, []);
  
   
 
   if (isLoading) return <p>Waiting for topics...</p>;
+
+  if (error) return <p>We're having trouble accessing topics, try again</p>
 
   return (
     <>

@@ -5,6 +5,7 @@ import ArticleCard from "./ArticleCard";
 
 export default function AllArticles() {
   const [articles, setArticles] = useState([]);
+  const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [searchParams, setSearchParams] = useSearchParams();
   const filterQuery = searchParams.get("topic");
@@ -16,7 +17,7 @@ export default function AllArticles() {
     newParams.delete("topic");
     newParams.delete("order");
     newParams.delete("sort_by");
-    setSearchParams(newParams)
+    setSearchParams(newParams);
   };
 
   // ** Filter topics **
@@ -53,16 +54,18 @@ export default function AllArticles() {
         params: { topic: filterQuery, sort_by: sortByQuery, order: orderQuery },
       })
       .then((res) => {
-        setArticles(res.data.articles);
         setIsLoading(false);
+        setArticles(res.data.articles);
       })
       .catch((err) => {
         setIsLoading(false);
-        console.log(err);
+        setError(true);
       });
   }, [filterQuery, sortByQuery, orderQuery]);
 
   if (isLoading) return <p>Fetching articles...</p>;
+
+  if (error) return <>404 Not Found</>;
 
   return (
     <>
