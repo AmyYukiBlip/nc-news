@@ -13,7 +13,6 @@ export default function Article() {
     body: "",
   });
   const [postMsg, setPostMsg] = useState(false);
-
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
 
@@ -23,7 +22,10 @@ export default function Article() {
       setArticle(res.data.articles);
       setIsLoading(false);
       setVote(res.data.articles.votes);
-    });
+    }).catch((err) => {
+      setIsLoading(false);
+      setError(true)
+    })
   }, [article_id]);
 
   //  ** Voting on article **

@@ -21,6 +21,7 @@ function App() {
         />
         <Route path="/login" element={<LoginForm />} />
         {/* <Route path="/articles?topic=:topic" element={<AllArticles />} /> */}
+        <Route path="*" element={<p>404 Page Not Found</p>} />
       </Routes>
     </>
   );
