@@ -171,7 +171,6 @@ a:hover {
   color: #0f110c;
 }
 
-
 .topicCardContainer {
   margin: 0px;
   padding: 0px;
@@ -221,7 +220,6 @@ a:hover {
   padding: 20px;
   align-items: center;
   break-inside: avoid;
-
 }
 
 .articleCardImg {
@@ -237,6 +235,53 @@ a:hover {
 .articleCardLink:hover {
   color: #0f110c;
   text-decoration: underline;
+}
+
+.filterform {
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.filterlabel {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.filterselect {
+  margin-right: 10px;
+  margin-bottom: 5px;
+  width: 100px;
+  padding: 5px;
+  border-radius: 4px;
+  background-color: #c6d8af;
+  border-color: #c6d8af;
+  color: #253257;
+}
+
+.filterclear {
+  background-color: #c6d8af;
+  color: #253257;
+  border-radius: 5px;
+  padding: 0.3em 1.2em;
+  font-size: 1em;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  margin-left: 10px;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  display: inline-block;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+  border: 1px solid #c6d8af; /* Border matching dropdown */
+}
+
+.filterclear:hover {
+  background-color: #a8c093; 
+  color: #253257;
 }
 
 /* Individual Article Page */

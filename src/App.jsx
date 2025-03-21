@@ -6,6 +6,7 @@ import Article from "./components/Article";
 import CommentCard from "./components/CommentCard";
 import NavBar from "./components/NavBar";
 import LoginForm from "./components/LoginForm";
+import AllArticlesCopy from "./components/AllArticles copy";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/articles" element={<AllArticles />} />
+        <Route path="/articlesCopy" element={<AllArticlesCopy />} />
         <Route path="/articles/:article_id" element={<Article />} />
         <Route
           path="/articles/:article_id/comments"
