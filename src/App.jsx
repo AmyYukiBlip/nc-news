@@ -6,7 +6,6 @@ import Article from "./components/Article";
 import CommentCard from "./components/CommentCard";
 import NavBar from "./components/NavBar";
 import LoginForm from "./components/LoginForm";
-import AllArticlesCopy from "./components/AllArticles copy";
 
 function App() {
   return (

@@ -3,7 +3,7 @@ import { ncNewsApi } from "../api";
 import { useSearchParams } from "react-router-dom";
 import ArticleCard from "./ArticleCard";
 
-export default function AllArticlesCopy() {
+export default function AllArticles() {
   const [articles, setArticles] = useState([]);
   const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
