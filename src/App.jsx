@@ -15,7 +15,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/articles" element={<AllArticles />} />
-        <Route path="/articlesCopy" element={<AllArticlesCopy />} />
         <Route path="/articles/:article_id" element={<Article />} />
         <Route
           path="/articles/:article_id/comments"
